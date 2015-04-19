@@ -76,14 +76,14 @@ def run_rule(rule, command, settings):
 
 
 def is_second_run(command):
-    """It's second run of `fuck`?"""
-    return command.script.startswith('fuck')
+    """It's second run of `cmon`?"""
+    return command.script.startswith('cmon')
 
 
 def main():
     command = get_command(sys.argv)
     if is_second_run(command):
-        print("echo Can't fuck twice")
+        print("echo Can't cmon again")
     else:
         user_dir = setup_user_dir()
         settings = get_settings(user_dir)
@@ -92,4 +92,4 @@ def main():
         if matched_rule:
             run_rule(matched_rule, command, settings)
         else:
-            print('echo No fuck given')
+            print('echo Cannot cmon')
